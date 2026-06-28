@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact LeMar – Milo &amp; Aby Resort in Kribi, Cameroon. Make a reservation, enquire about packages, or get directions to our resort." />
+  <title>Contact &amp; Reservations | LeMar – Milo &amp; Aby Resort | Kribi, Cameroon</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1f2d'/><text y='22' x='4' font-size='18' fill='%23c9a84c' font-family='serif'>L</text></svg>" />
+  <style>
+    .booking-section { background: var(--navy); padding: 5rem 0; }
+    .booking-form-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+    .booking-sidebar h2 { color: var(--white); margin-bottom: 1.2rem; }
+    .booking-sidebar p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
+    .booking-highlights li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+    }
+    .booking-highlights li:last-child { border-bottom: none; }
+    .booking-highlights .bh-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .booking-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow);
+    }
+    .booking-form-wrap h3 { font-family: var(--font-serif); font-size: 1.8rem; color: var(--navy); margin-bottom: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .faq-item { padding: 2.5rem; border-bottom: 1px solid var(--cream-dark); border-right: 1px solid var(--cream-dark); }
+    .faq-item:nth-child(even) { border-right: none; }
+    .faq-item:nth-last-child(-n+2) { border-bottom: none; }
+    .faq-item h4 { font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.8rem; }
+    .faq-item p { font-size: 0.9rem; }
+    @media (max-width: 900px) {
+      .booking-form-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr !important; }
+      .form-row { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-item { border-right: none !important; }
+      .booking-form-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">LeMar</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub" data-i18n="logo.sub">Milo &amp; Aby Resort</span>
+      </a>
+      <nav id="mainNav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="accommodations.html" data-i18n="nav.stay">Stay</a>
+        <a href="restaurant.html" data-i18n="nav.dine">Dine</a>
+        <a href="spa.html" data-i18n="nav.spa">Spa</a>
+        <a href="pool.html" data-i18n="nav.pool">Pool</a>
+        <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+        <a href="#booking" class="nav-book" data-i18n="nav.reserve">Reserve</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <img src="../view 1.jpg" alt="LeMar Resort – Kribi, Cameroon" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1501117716987-c8c394bb29df?w=1920&q=85'" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="eyebrow" data-i18n="cont.eyebrow">We're Ready for You</span>
+      <h1 data-i18n="cont.h1">Contact &amp; Reservations</h1>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="nav.contact">Contact</span>
+    </div>
+  </div>
+
+  <!-- CONTACT INFO -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <span class="eyebrow" data-i18n="cont.info.ey">Get in Touch</span>
+          <h2 data-i18n="cont.info.h2">We'd Love to Hear From You</h2>
+          <p data-i18n="cont.info.p">Whether you're planning a stay, organising a private event, or simply seeking more information about LeMar, our team is here to assist — seven days a week.</p>
+          <ul class="contact-details">
+            <li>
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong data-i18n="cont.phone">Phone</strong><br>
+                <a href="tel:+237600000000" style="color:var(--gold);">+237 600 000 000</a><br>
+                <span data-i18n="cont.phone.hours">Available 7:00 AM – 10:00 PM daily</span>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong data-i18n="cont.email">Email</strong><br>
+                <a href="mailto:reservations@lemarresort.com" style="color:var(--gold);">reservations@lemarresort.com</a><br>
+                <span data-i18n="cont.email.resp">We respond within 4 business hours</span>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">💆</span>
+              <div>
+                <strong data-i18n="cont.spa_enq">Spa Enquiries</strong><br>
+                <a href="mailto:spa@lemarresort.com" style="color:var(--gold);">spa@lemarresort.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">🎉</span>
+              <div>
+                <strong data-i18n="cont.events">Events &amp; Weddings</strong><br>
+                <a href="mailto:events@lemarresort.com" style="color:var(--gold);">events@lemarresort.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong data-i18n="loc.addr.label">Address</strong><br>
+                Boulevard du Littoral, Kribi<br>
+                South Region, Cameroon
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <form class="form-grid" id="contactForm" style="background:var(--white); padding:3rem; border-radius:var(--radius); box-shadow:var(--shadow);">
+            <h3 style="grid-column:1/-1; font-family:var(--font-serif); font-size:1.8rem; color:var(--navy); margin-bottom:1rem;" data-i18n="cont.form.h3">Send Us a Message</h3>
+            <div class="form-group">
+              <label for="firstName" data-i18n="form.fname">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Jean" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName" data-i18n="form.lname">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Dupont" required />
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="form.email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="form.phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+237 6XX XXX XXX" />
+            </div>
+            <div class="form-group form-full">
+              <label for="subject" data-i18n="form.subject">Subject</label>
+              <select id="subject" name="subject">
+                <option data-i18n="form.subj.general">General Enquiry</option>
+                <option data-i18n="form.subj.room">Room Reservation</option>
+                <option data-i18n="form.subj.rest">Restaurant Reservation</option>
+                <option data-i18n="form.subj.spa">Spa Booking</option>
+                <option data-i18n="form.subj.event">Event / Wedding</option>
+                <option data-i18n="form.subj.group">Group Booking</option>
+                <option data-i18n="form.subj.other">Other</option>
+              </select>
+            </div>
+            <div class="form-group form-full">
+              <label for="message" data-i18n="form.msg">Message</label>
+              <textarea id="message" name="message" data-i18n-ph="form.msg.ph" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+            <div class="form-full">
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="btn.send_msg">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-form-grid">
+        <div class="booking-sidebar fade-up">
+          <span class="eyebrow" data-i18n="cont.book.ey">Online Booking</span>
+          <h2 data-i18n="cont.book.h2">Reserve Your Room at LeMar</h2>
+          <p data-i18n="cont.book.p">Complete the form and our reservations team will confirm your booking within 24 hours with a personalised confirmation and pre-arrival guide.</p>
+          <ul class="booking-highlights">
+            <li><span class="bh-icon">✅</span> <span data-i18n="cont.book.li1">Best rate guarantee on direct bookings</span></li>
+            <li><span class="bh-icon">🎁</span> <span data-i18n="cont.book.li2">Complimentary welcome amenity on arrival</span></li>
+            <li><span class="bh-icon">🚗</span> <span data-i18n="cont.book.li3">Airport transfer available upon request</span></li>
+            <li><span class="bh-icon">❌</span> <span data-i18n="cont.book.li4">Free cancellation up to 48 hours prior</span></li>
+            <li><span class="bh-icon">🕘</span> <span data-i18n="cont.book.li5">Check-in: 3:00 PM · Check-out: 12:00 PM</span></li>
+            <li><span class="bh-icon">🌍</span> <span data-i18n="cont.book.li6">Secure, discreet, and personalised service</span></li>
+          </ul>
+        </div>
+        <div class="booking-form-wrap fade-up">
+          <h3 data-i18n="cont.resv.h3">Room Reservation Request</h3>
+          <form id="reservationForm">
+            <div class="form-row" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-firstname" data-i18n="form.fname">First Name *</label>
+                <input type="text" id="res-firstname" required placeholder="First name" />
+              </div>
+              <div class="form-group">
+                <label for="res-lastname" data-i18n="form.lname">Last Name *</label>
+                <input type="text" id="res-lastname" required placeholder="Last name" />
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-email" data-i18n="form.email">Email *</label>
+                <input type="email" id="res-email" required placeholder="your@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="res-phone" data-i18n="form.phone">Phone</label>
+                <input type="tel" id="res-phone" placeholder="+237 6XX XXX XXX" />
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-checkin" data-i18n="book.checkin">Check-In Date *</label>
+                <input type="date" id="res-checkin" required />
+              </div>
+              <div class="form-group">
+                <label for="res-checkout" data-i18n="book.checkout">Check-Out Date *</label>
+                <input type="date" id="res-checkout" required />
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-adults" data-i18n="form.adults">Adults</label>
+                <select id="res-adults">
+                  <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="res-children" data-i18n="form.children">Children</label>
+                <select id="res-children">
+                  <option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row single" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-room" data-i18n="book.roomtype">Preferred Room Type</label>
+                <select id="res-room">
+                  <option data-i18n="cont.resv.nopref">No preference</option>
+                  <option data-i18n="rooms.r1.h3">Deluxe Ocean Room</option>
+                  <option data-i18n="accom.r3.h2">Junior Suite</option>
+                  <option data-i18n="rooms.r2.h3">Family Garden Suite</option>
+                  <option data-i18n="rooms.r3.h3">Presidential Suite</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row single" style="margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label for="res-occasion" data-i18n="form.occasion">Special Occasion</label>
+                <select id="res-occasion">
+                  <option data-i18n="form.occ.none">None</option>
+                  <option data-i18n="form.occ.honey">Honeymoon / Anniversary</option>
+                  <option data-i18n="form.occ.bday">Birthday</option>
+                  <option data-i18n="form.occ.family">Family Reunion</option>
+                  <option data-i18n="form.occ.biz">Business Trip</option>
+                  <option data-i18n="form.occ.wellness">Wellness Retreat</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row single" style="margin-bottom:2rem;">
+              <div class="form-group">
+                <label for="res-requests" data-i18n="form.special_req">Special Requests or Notes</label>
+                <textarea id="res-requests" rows="4" data-i18n-ph="form.req.ph" placeholder="Dietary requirements, accessibility needs, room preferences..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="btn.submit_resv">Submit Reservation Request</button>
+            <p style="font-size:0.8rem; color:var(--text-light); margin-top:1rem; text-align:center;" data-i18n="cont.resv.note">Our reservations team will contact you within 24 hours to confirm your stay.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP & DIRECTIONS -->
+  <section class="section" style="background:var(--white);">
+    <div class="container location-grid">
+      <div class="location-map fade-up">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=9.8%2C2.85%2C10.0%2C3.05&layer=mapnik&marker=2.9386%2C9.9070"
+          title="LeMar Resort – Kribi, Cameroon"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="location-details fade-up">
+        <span class="eyebrow" data-i18n="loc.eyebrow">How to Reach Us</span>
+        <h2 data-i18n="cont.loc.h2">Getting to LeMar</h2>
+        <p data-i18n="cont.loc.p">Kribi is located in the South Region of Cameroon, approximately 165 km south of Douala on the Atlantic coast. Our concierge team is available to arrange seamless transfers from any point of arrival.</p>
+        <ul class="location-list">
+          <li>
+            <span class="loc-icon">✈️</span>
+            <div>
+              <span class="loc-label" data-i18n="loc.air.label">By Air</span>
+              <span data-i18n="cont.loc.air">Fly into Douala International Airport (DLA). Private airport transfers to LeMar take approximately 2.5 hours. Contact us to arrange your transfer in advance.</span>
+            </div>
+          </li>
+          <li>
+            <span class="loc-icon">🚗</span>
+            <div>
+              <span class="loc-label" data-i18n="loc.road.label">By Road</span>
+              <span data-i18n="cont.loc.road">Take the RN7 highway from Douala to Edéa, then continue south on RN3 to Kribi. Resort shuttle departures from Douala available daily at 9:00 AM and 3:00 PM.</span>
+            </div>
+          </li>
+          <li>
+            <span class="loc-icon">⛵</span>
+            <div>
+              <span class="loc-label" data-i18n="cont.loc.priv_label">By Private Transfer</span>
+              <span data-i18n="cont.loc.priv">We coordinate private vehicle and boat transfers. Contact our concierge at least 48 hours in advance for bespoke arrangements.</span>
+            </div>
+          </li>
+          <li>
+            <span class="loc-icon">📍</span>
+            <div>
+              <span class="loc-label" data-i18n="loc.addr.label">Our Address</span>
+              <span data-i18n="loc.addr.desc">Boulevard du Littoral, Kribi, South Region, Cameroon</span>
+            </div>
+          </li>
+        </ul>
+        <a href="https://maps.google.com/?q=Kribi,Cameroon" target="_blank" rel="noopener" class="btn btn-outline-dark" style="margin-top:1.5rem;" data-i18n="btn.google_maps">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-sm" style="background:var(--cream-dark);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Questions Answered</span>
+        <h2 data-i18n="faq.h2">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item fade-up">
+          <h4>What is the check-in and check-out time?</h4>
+          <p>Check-in is from 3:00 PM and check-out is by 12:00 PM. Early check-in and late check-out may be arranged subject to availability — please contact us in advance.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h4>Is breakfast included in the room rate?</h4>
+          <p>Most room rates include daily breakfast at Le Marée Restaurant. Some promotional rates may not include breakfast — this will be clearly indicated at booking.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h4>Do you accommodate families with young children?</h4>
+          <p>Absolutely. Our Family Garden Suites are specially designed for families, and we offer a children's pool, activity coordinators, a kids' menu, and baby amenities upon request.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h4>Is the resort accessible by public transport?</h4>
+          <p>Kribi is accessible via shared bush taxis from Douala. However, we recommend private transfers for comfort. We can arrange transport from any major Cameroonian city.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h4>Can I book the spa or restaurant without staying at the resort?</h4>
+          <p>Yes, day guests are welcome at our spa and restaurant subject to availability. We recommend calling in advance to confirm and reserve your preferred time slot.</p>
+        </div>
+        <div class="faq-item fade-up">
+          <h4>Do you host weddings and private events?</h4>
+          <p>LeMar is an exceptional setting for weddings, anniversaries, corporate retreats, and private celebrations. Contact our events team to discuss tailored packages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);" data-i18n="cont.cta.ey">We're Waiting for You</span>
+      <h2 data-i18n="cont.cta.h2">Your Perfect Escape Begins Here</h2>
+      <p data-i18n="cont.cta.p">Reach out today and let our team craft an unforgettable experience at LeMar – Milo &amp; Aby Resort.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="tel:+237600000000" class="btn btn-primary" data-i18n="btn.call_us">📞 Call Us</a>
+        <a href="mailto:reservations@lemarresort.com" class="btn btn-outline" data-i18n="btn.email_us">✉️ Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-main">LeMar</span>
+            <div class="logo-divider"></div>
+            <span class="logo-sub">Milo &amp; Aby Resort</span>
+          </a>
+          <p data-i18n="footer.tagline">A luxury resort on the Atlantic coast of Kribi, Cameroon — where nature, culture, and elegance converge in perfect harmony.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">📷</a>
+            <a href="#" class="social-link">f</a>
+            <a href="#" class="social-link">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4 data-i18n="footer.explore">Explore</h4><ul>
+          <li><a href="accommodations.html" data-i18n="nav.stay">Rooms &amp; Suites</a></li>
+          <li><a href="restaurant.html" data-i18n="nav.dine">Restaurant</a></li>
+          <li><a href="spa.html" data-i18n="nav.spa">Spa</a></li>
+          <li><a href="pool.html" data-i18n="nav.pool">Pool</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer.info">Information</h4><ul>
+          <li><a href="#" data-i18n="footer.events">Events &amp; Weddings</a></li>
+          <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="#" data-i18n="footer.terms">Terms of Use</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><ul>
+          <li><a href="tel:+237600000000">+237 600 000 000</a></li>
+          <li><a href="mailto:reservations@lemarresort.com">reservations@<br>lemarresort.com</a></li>
+          <li><a href="#">Kribi, South Region, Cameroon</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">&copy; 2025 LeMar – Milo &amp; Aby Resort. All rights reserved.</span>
+        <span><a href="https://www.lemarresort.com">lemarresort.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Reservation form
+    const resForm = document.getElementById('reservationForm');
+    if (resForm) {
+      const today = new Date().toISOString().split('T')[0];
+      const ci = document.getElementById('res-checkin');
+      const co = document.getElementById('res-checkout');
+      if (ci) ci.min = today;
+      if (co) co.min = today;
+      if (ci && co) {
+        ci.addEventListener('change', () => {
+          co.min = ci.value;
+          if (co.value && co.value <= ci.value) {
+            const d = new Date(ci.value);
+            d.setDate(d.getDate() + 1);
+            co.value = d.toISOString().split('T')[0];
+          }
+        });
+      }
+      resForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = resForm.querySelector('button[type="submit"]');
+        btn.textContent = '✅ Request Submitted!';
+        btn.style.background = '#2ecc71';
+        btn.style.borderColor = '#2ecc71';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => {
+          btn.textContent = 'Submit Reservation Request';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          resForm.reset();
+        }, 4000);
+      });
+    }
+  </script>
+</body>
+</html>

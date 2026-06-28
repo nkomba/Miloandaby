@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Élan Spa at LeMar – Milo &amp; Aby Resort. Luxury spa treatments, African rituals, massages, and wellness therapies in Kribi, Cameroon." />
+  <title>Élan Spa &amp; Wellness | LeMar – Milo &amp; Aby Resort | Kribi, Cameroon</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1f2d'/><text y='22' x='4' font-size='18' fill='%23c9a84c' font-family='serif'>L</text></svg>" />
+  <style>
+    .spa-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .spa-intro-image { height: 600px; overflow: hidden; }
+    .spa-intro-content { padding: 5rem 4rem; background: var(--cream-dark); display: flex; flex-direction: column; justify-content: center; }
+    .treatment-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .treatment-full-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: var(--transition);
+    }
+    .treatment-full-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .treatment-full-img { height: 220px; overflow: hidden; }
+    .treatment-full-img img { transition: transform 0.6s ease; }
+    .treatment-full-card:hover .treatment-full-img img { transform: scale(1.06); }
+    .treatment-full-info { padding: 1.8rem; }
+    .treatment-full-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .treatment-full-info p { font-size: 0.9rem; margin-bottom: 1rem; }
+    .treatment-meta { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--text-light); border-top: 1px solid var(--cream-dark); padding-top: 1rem; margin-top: 0.5rem; }
+    .treatment-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .treatment-price { font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold); margin-top: 0.8rem; }
+    .spa-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .spa-gallery-item { height: 260px; overflow: hidden; }
+    .spa-gallery-item img { transition: transform 0.6s ease; }
+    .spa-gallery-item:hover img { transform: scale(1.06); }
+    .spa-ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .ritual-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      border-top: 3px solid var(--gold);
+    }
+    .ritual-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .ritual-card h4 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--navy); margin-bottom: 0.6rem; }
+    .ritual-card p { font-size: 0.88rem; }
+    @media (max-width: 900px) {
+      .spa-intro-grid { grid-template-columns: 1fr; }
+      .spa-intro-image { height: 400px; }
+      .spa-intro-content { padding: 3rem 2rem; }
+      .treatment-full-grid { grid-template-columns: 1fr; }
+      .spa-gallery-grid { grid-template-columns: 1fr 1fr; }
+      .spa-ritual-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">LeMar</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub" data-i18n="logo.sub">Milo &amp; Aby Resort</span>
+      </a>
+      <nav id="mainNav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="accommodations.html" data-i18n="nav.stay">Stay</a>
+        <a href="restaurant.html" data-i18n="nav.dine">Dine</a>
+        <a href="spa.html" class="active" data-i18n="nav.spa">Spa</a>
+        <a href="pool.html" data-i18n="nav.pool">Pool</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html#booking" class="nav-book" data-i18n="nav.reserve">Reserve</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=85" alt="Élan Spa – serene treatment room at LeMar Resort" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="eyebrow" data-i18n="spa.eyebrow">Wellness &amp; Renewal</span>
+      <h1 data-i18n="spa.h1">Élan Spa &amp; Wellness</h1>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="nav.spa">Spa</span>
+    </div>
+  </div>
+
+  <!-- SPA INTRO -->
+  <section style="padding:0;">
+    <div class="spa-intro-grid">
+      <div class="spa-intro-image">
+        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&q=80" alt="Spa therapist performing a ritual massage" loading="lazy" />
+      </div>
+      <div class="spa-intro-content">
+        <span class="eyebrow" data-i18n="spa.phil.ey">Our Philosophy</span>
+        <h2 data-i18n="spa.phil.h2">The Art of African Healing</h2>
+        <p data-i18n="spa.phil.p1">At Élan Spa, we believe that true wellness is a homecoming. Our treatments are inspired by centuries-old African healing traditions — the use of sacred oils, mineral-rich clays, plant botanicals, and the healing power of human touch.</p>
+        <p style="margin-top:1rem;" data-i18n="spa.phil.p2">Our team of internationally certified therapists weave ancient ritual with contemporary technique to create experiences that restore balance in body, mind, and spirit. Whether you seek relief from tension, deep renewal, or simply an hour of blissful stillness, Élan Spa holds space for your journey.</p>
+        <div style="display:flex; gap:2rem; margin-top:2rem; padding-top:2rem; border-top:1px solid var(--cream-dark);">
+          <div>
+            <div style="font-family:var(--font-serif); font-size:2rem; color:var(--gold);">8</div>
+            <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light);" data-i18n="spa.stat.rooms">Treatment Rooms</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-serif); font-size:2rem; color:var(--gold);">24+</div>
+            <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light);" data-i18n="spa.stat.rituals">Signature Rituals</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-serif); font-size:2rem; color:var(--gold);">100%</div>
+            <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light);" data-i18n="spa.stat.natural">Natural Products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFRICAN RITUALS -->
+  <section class="section" style="background:var(--navy);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="spa.rituals.ey">Signature Collections</span>
+        <h2 style="color:var(--white);" data-i18n="spa.rituals.h2">Our African Wellness Rituals</h2>
+        <p style="color:rgba(255,255,255,0.7); max-width:600px; margin:1rem auto 0;" data-i18n="spa.rituals.p">Immersive multi-step journeys that honour the healing traditions of Central and West Africa.</p>
+      </div>
+      <div class="spa-ritual-grid">
+        <div class="ritual-card fade-up">
+          <div class="ritual-icon">🌰</div>
+          <h4 data-i18n="spa.r1.h4">Cacao &amp; Baobab Ritual</h4>
+          <p data-i18n="spa.r1.p">A full-body journey beginning with an exfoliating cacao scrub, followed by a warm baobab oil massage and a hydrating mask. 120 minutes of pure restoration.</p>
+          <div style="color:var(--gold); font-family:var(--font-serif); font-size:1.3rem; margin-top:1.2rem;">XAF 58,000 · 120 min</div>
+        </div>
+        <div class="ritual-card fade-up">
+          <div class="ritual-icon">🌿</div>
+          <h4 data-i18n="spa.r2.h4">Forest Botanicals Journey</h4>
+          <p data-i18n="spa.r2.p">Harness the healing power of Cameroon's equatorial forest. Wild herb steam, shea butter compress, forest-oil massage, and a moringa scalp treatment.</p>
+          <div style="color:var(--gold); font-family:var(--font-serif); font-size:1.3rem; margin-top:1.2rem;">XAF 65,000 · 150 min</div>
+        </div>
+        <div class="ritual-card fade-up">
+          <div class="ritual-icon">🌊</div>
+          <h4 data-i18n="spa.r3.h4">Ocean Mineral Detox</h4>
+          <p data-i18n="spa.r3.p">Atlantic sea salt exfoliation, algae wrap, and a deep-tissue massage with mineral-infused oils sourced from the Gulf of Guinea coast. Profoundly detoxifying.</p>
+          <div style="color:var(--gold); font-family:var(--font-serif); font-size:1.3rem; margin-top:1.2rem;">XAF 52,000 · 90 min</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="spa.treat.ey">Treatments Menu</span>
+        <h2 data-i18n="spa.treat.h2">Choose Your Experience</h2>
+      </div>
+      <div class="treatment-full-grid">
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&q=80" alt="Hot stone massage" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t1.h3">Volcanic Hot Stone Massage</h3>
+            <p data-i18n="spa.t1.p">Smooth volcanic stones are heated and placed along energy meridians before being used as extension of the therapist's hands for a deeply penetrating massage.</p>
+            <div class="treatment-meta">
+              <span data-i18n="spa.t1.meta1">⏱ 60 or 90 min</span>
+              <span data-i18n="spa.meta.indiv">👤 Individual</span>
+            </div>
+            <div class="treatment-price"><span data-i18n="label.from">From</span> XAF 32,000</div>
+          </div>
+        </div>
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&q=80" alt="Deep tissue massage" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t2.h3">Deep Tissue Signature Massage</h3>
+            <p data-i18n="spa.t2.p">Targeting chronic muscle tension with firm, focused pressure. Our therapists combine Swedish and deep tissue techniques adapted to your individual needs.</p>
+            <div class="treatment-meta">
+              <span data-i18n="spa.t1.meta1">⏱ 60 or 90 min</span>
+              <span data-i18n="spa.meta.indiv">👤 Individual</span>
+            </div>
+            <div class="treatment-price"><span data-i18n="label.from">From</span> XAF 28,000</div>
+          </div>
+        </div>
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=80" alt="Facial treatment" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t3.h3">Radiance Facial by Élan</h3>
+            <p data-i18n="spa.t3.p">A deeply personalised facial using natural African botanical serums, vitamin C brightening treatments, and lymphatic drainage techniques for lasting glow.</p>
+            <div class="treatment-meta">
+              <span>⏱ 75 min</span>
+              <span data-i18n="spa.meta.indiv">👤 Individual</span>
+            </div>
+            <div class="treatment-price">XAF 38,000</div>
+          </div>
+        </div>
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80" alt="Couples massage" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t4.h3">Couples Journey</h3>
+            <p data-i18n="spa.t4.p">Share the healing experience with your partner in our private couples suite, complete with a rose petal bath, champagne, and synchronised massages by two therapists.</p>
+            <div class="treatment-meta">
+              <span>⏱ 90 min</span>
+              <span data-i18n="spa.meta.couples">👥 Couples</span>
+            </div>
+            <div class="treatment-price">XAF 75,000</div>
+          </div>
+        </div>
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=700&q=80" alt="Body scrub treatment" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t5.h3">Exfoliating Body Polish</h3>
+            <p data-i18n="spa.t5.p">Renew your skin with our hand-blended African sugar and coffee scrub, followed by a moisturising shea butter wrap. Leaves skin luminous and silky.</p>
+            <div class="treatment-meta">
+              <span>⏱ 45 min</span>
+              <span data-i18n="spa.meta.indiv">👤 Individual</span>
+            </div>
+            <div class="treatment-price">XAF 22,000</div>
+          </div>
+        </div>
+
+        <div class="treatment-full-card fade-up">
+          <div class="treatment-full-img">
+            <img src="https://images.unsplash.com/photo-1465685793016-c4394b9efa9f?w=700&q=80" alt="Yoga and meditation" loading="lazy" />
+          </div>
+          <div class="treatment-full-info">
+            <h3 data-i18n="spa.t6.h3">Sunrise Yoga &amp; Mindfulness</h3>
+            <p data-i18n="spa.t6.p">Begin each morning with a guided outdoor yoga session on our ocean terrace, followed by meditation and breathwork as the sun rises over the Atlantic.</p>
+            <div class="treatment-meta">
+              <span>⏱ 60 min</span>
+              <span data-i18n="spa.meta.group">👥 Group / Private</span>
+            </div>
+            <div class="treatment-price"><span data-i18n="label.from">From</span> XAF 12,000</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPA GALLERY -->
+  <section class="section-sm" style="background:var(--white);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:2rem;">
+        <span class="eyebrow" data-i18n="spa.gallery.ey">The Space</span>
+        <h2 data-i18n="spa.gallery.h2">Step into Serenity</h2>
+      </div>
+      <div class="spa-gallery-grid">
+        <div class="spa-gallery-item">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" alt="Spa relaxation room" loading="lazy" />
+        </div>
+        <div class="spa-gallery-item">
+          <img src="https://images.unsplash.com/photo-1554057009-ee97c5a70fec?w=700&q=80" alt="Spa pool and jacuzzi" loading="lazy" />
+        </div>
+        <div class="spa-gallery-item">
+          <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=700&q=80" alt="Natural botanical products" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPA INFO -->
+  <section class="section-sm" style="background:var(--cream-dark);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:2rem;" class="fade-up">
+        <div style="padding:2rem; text-align:center; background:var(--white); border-radius:var(--radius);">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">🕘</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem;" data-i18n="rest.hours.h4">Opening Hours</h4>
+          <p style="font-size:0.88rem;" data-i18n="spa.hours.p">Daily: 9:00 AM – 9:00 PM<br>Couples Suite available 8:00 AM – 10:00 PM by appointment</p>
+        </div>
+        <div style="padding:2rem; text-align:center; background:var(--white); border-radius:var(--radius);">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">📅</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem;" data-i18n="spa.resv.h4">Reservations</h4>
+          <p style="font-size:0.88rem;" data-i18n="spa.resv.p">We recommend booking 24 hours in advance. Hotel guests have priority access. Walk-ins welcome subject to availability.</p>
+        </div>
+        <div style="padding:2rem; text-align:center; background:var(--white); border-radius:var(--radius);">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">🎁</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem;" data-i18n="spa.pkg.h4">Spa Packages</h4>
+          <p style="font-size:0.88rem;" data-i18n="spa.pkg.p">Gift certificates available. Special packages for honeymoons, wellness retreats, and corporate groups. Contact us for custom offerings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);" data-i18n="spa.cta.ey">Book Your Ritual</span>
+      <h2 data-i18n="spa.cta.h2">Reserve Your Spa Experience</h2>
+      <p data-i18n="spa.cta.p">Let our therapists craft a personalised wellness journey just for you. Advance booking recommended.</p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="btn.book_treatment">Book a Treatment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-main">LeMar</span>
+            <div class="logo-divider"></div>
+            <span class="logo-sub">Milo &amp; Aby Resort</span>
+          </a>
+          <p data-i18n="footer.tagline.short">A luxury resort on the Atlantic coast of Kribi, Cameroon.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">📷</a>
+            <a href="#" class="social-link">f</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4 data-i18n="footer.explore">Explore</h4><ul>
+          <li><a href="accommodations.html" data-i18n="nav.stay">Rooms</a></li>
+          <li><a href="restaurant.html" data-i18n="nav.dine">Restaurant</a></li>
+          <li><a href="spa.html" data-i18n="nav.spa">Spa</a></li>
+          <li><a href="pool.html" data-i18n="nav.pool">Pool</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="nav.spa">Spa</h4><ul>
+          <li><a href="#" data-i18n="spa.foot.rituals">Signature Rituals</a></li>
+          <li><a href="#" data-i18n="spa.foot.couples">Couples Packages</a></li>
+          <li><a href="#" data-i18n="spa.foot.gift">Gift Certificates</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><ul>
+          <li><a href="tel:+237600000000">+237 600 000 000</a></li>
+          <li><a href="mailto:spa@lemarresort.com">spa@lemarresort.com</a></li>
+          <li><a href="#">Kribi, Cameroon</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">&copy; 2025 LeMar – Milo &amp; Aby Resort. All rights reserved.</span>
+        <span><a href="https://www.lemarresort.com">lemarresort.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rooms &amp; Suites at LeMar – Milo &amp; Aby Resort in Kribi, Cameroon. Ocean-view rooms, family garden suites, and our exclusive presidential suite." />
+  <title>Accommodations | LeMar – Milo &amp; Aby Resort | Kribi, Cameroon</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1f2d'/><text y='22' x='4' font-size='18' fill='%23c9a84c' font-family='serif'>L</text></svg>" />
+  <style>
+    .room-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 6rem; }
+    .room-detail-grid.reverse { direction: rtl; }
+    .room-detail-grid.reverse > * { direction: ltr; }
+    .room-detail-images { position: relative; }
+    .room-main-img { height: 480px; border-radius: 4px; overflow: hidden; box-shadow: var(--shadow); }
+    .room-thumb-row { display: flex; gap: 8px; margin-top: 8px; }
+    .room-thumb { flex: 1; height: 110px; border-radius: 4px; overflow: hidden; cursor: pointer; transition: opacity 0.3s; }
+    .room-thumb:hover { opacity: 0.85; }
+    .room-detail-info { padding: 1rem 0; }
+    .room-detail-info h2 { margin-bottom: 0.8rem; }
+    .room-detail-info .room-tagline { font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--gold); margin-bottom: 1.5rem; }
+    .room-detail-info p { margin-bottom: 1.2rem; }
+    .amenities-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin: 1.5rem 0; }
+    .amenity-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.88rem; color: var(--text-mid); }
+    .amenity-item span { font-size: 1.1rem; }
+    .price-block { background: var(--cream-dark); padding: 1.5rem; border-radius: var(--radius); margin: 1.5rem 0; }
+    .price-block .from { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); }
+    .price-block .price { font-family: var(--font-serif); font-size: 2rem; color: var(--navy); }
+    .price-block .per { font-size: 0.8rem; color: var(--text-light); }
+    .section-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 2rem 0; }
+    @media (max-width: 900px) {
+      .room-detail-grid { grid-template-columns: 1fr; direction: ltr !important; }
+      .room-detail-grid.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">LeMar</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub" data-i18n="logo.sub">Milo &amp; Aby Resort</span>
+      </a>
+      <nav id="mainNav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="accommodations.html" class="active" data-i18n="nav.stay">Stay</a>
+        <a href="restaurant.html" data-i18n="nav.dine">Dine</a>
+        <a href="spa.html" data-i18n="nav.spa">Spa</a>
+        <a href="pool.html" data-i18n="nav.pool">Pool</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html#booking" class="nav-book" data-i18n="nav.reserve">Reserve</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <img src="../chambre 1.jpg" alt="LeMar Resort room interior" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1618245318763-a15156d6b23c?w=1920&q=85'" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="eyebrow" data-i18n="accom.eyebrow">Rest &amp; Retreat</span>
+      <h1 data-i18n="accom.h1">Rooms &amp; Suites</h1>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="accom.h1">Accommodations</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section-sm" style="background:var(--cream);">
+    <div class="container text-center" style="max-width:720px;">
+      <span class="eyebrow" data-i18n="accom.intro.ey">Your Home in Kribi</span>
+      <h2 data-i18n="accom.intro.h2">Spaces That Breathe with You</h2>
+      <p style="margin-top:1rem;" data-i18n="accom.intro.p">Every room at LeMar is designed as a personal sanctuary — fusing warm African artistry with the refined comfort of a world-class resort. Whether you seek a romantic hideaway, a spacious family retreat, or the ultimate in private luxury, we have a space that feels made for you.</p>
+    </div>
+  </section>
+
+  <!-- ROOMS DETAIL -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+
+      <!-- Room 1: Deluxe Ocean -->
+      <div class="room-detail-grid fade-up">
+        <div class="room-detail-images">
+          <div class="room-main-img">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80" alt="Deluxe Ocean Room – king bed facing the sea" loading="lazy" />
+          </div>
+          <div class="room-thumb-row">
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=75" alt="Bathroom" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=400&q=75" alt="Ocean view balcony" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=400&q=75" alt="Room details" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="room-detail-info">
+          <span class="eyebrow" data-i18n="rooms.r1.badge">Most Popular</span>
+          <h2 data-i18n="rooms.r1.h3">Deluxe Ocean Room</h2>
+          <p class="room-tagline" data-i18n="accom.r1.tagline">Wake to the rhythm of the Atlantic</p>
+          <p data-i18n="accom.r1.p1">Our Deluxe Ocean Rooms offer front-row seats to one of the most beautiful coastlines in Central Africa. Decorated with hand-crafted Cameroonian textiles and natural timber finishes, each room is a masterclass in tropical elegance.</p>
+          <p data-i18n="accom.r1.p2">Floor-to-ceiling glass doors open onto a private balcony where the Atlantic breeze mingles with the scent of the surrounding forest — a sensory experience unlike any other.</p>
+          <div class="amenities-list">
+            <div class="amenity-item"><span>🛏</span> <span data-i18n="accom.am.king">King-size bed (260×200 cm)</span></div>
+            <div class="amenity-item"><span>🌊</span> <span data-i18n="accom.am.ocean">Direct ocean views</span></div>
+            <div class="amenity-item"><span>🛁</span> <span data-i18n="accom.am.tub">Deep soaking bathtub</span></div>
+            <div class="amenity-item"><span>🚿</span> <span data-i18n="accom.am.shower">Rain shower</span></div>
+            <div class="amenity-item"><span>📶</span> <span data-i18n="accom.am.wifi">Fibre WiFi</span></div>
+            <div class="amenity-item"><span>❄️</span> <span data-i18n="accom.am.ac">Air conditioning</span></div>
+            <div class="amenity-item"><span>📺</span> <span data-i18n="accom.am.tv">Smart TV</span></div>
+            <div class="amenity-item"><span>☕</span> <span data-i18n="accom.am.nespresso">Nespresso &amp; minibar</span></div>
+            <div class="amenity-item"><span>🏖</span> <span data-i18n="accom.am.beach">Beach towels &amp; loungers</span></div>
+            <div class="amenity-item"><span>🛎</span> <span data-i18n="accom.am.roomsvc">24hr room service</span></div>
+          </div>
+          <div class="price-block">
+            <div class="from" data-i18n="label.starting_from">Starting from</div>
+            <div class="price">XAF 85,000 <span class="per" data-i18n="label.per_night">/ night</span></div>
+          </div>
+          <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.reserve_room">Reserve This Room</a>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- Room 2: Family Garden Suite -->
+      <div class="room-detail-grid reverse fade-up">
+        <div class="room-detail-images">
+          <div class="room-main-img">
+            <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=900&q=80" alt="Family Garden Suite – spacious living area" loading="lazy" />
+          </div>
+          <div class="room-thumb-row">
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=400&q=75" alt="Children's bedroom" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&q=75" alt="Garden terrace" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=75" alt="Kitchenette" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="room-detail-info">
+          <span class="eyebrow" data-i18n="rooms.r2.badge">Family Favourite</span>
+          <h2 data-i18n="rooms.r2.h3">Family Garden Suite</h2>
+          <p class="room-tagline" data-i18n="accom.r2.tagline">Where memories are made together</p>
+          <p data-i18n="accom.r2.p1">Designed specifically for families, our Garden Suites offer interconnected rooms surrounded by lush tropical gardens and direct access to the resort's leisure areas. Watch your children play freely in nature while you relax on your private terrace.</p>
+          <p data-i18n="accom.r2.p2">The suite includes a master bedroom for parents and a vibrant second bedroom for children — both beautifully appointed and thoughtfully equipped with everything a family needs.</p>
+          <div class="amenities-list">
+            <div class="amenity-item"><span>🛏</span> <span data-i18n="accom.r2.am1">2 interconnected bedrooms</span></div>
+            <div class="amenity-item"><span>🌿</span> <span data-i18n="accom.r2.am2">Private garden terrace</span></div>
+            <div class="amenity-item"><span>🍳</span> <span data-i18n="accom.r2.am3">Full kitchenette</span></div>
+            <div class="amenity-item"><span>🛁</span> <span data-i18n="accom.r2.am4">2 full bathrooms</span></div>
+            <div class="amenity-item"><span>🧒</span> <span data-i18n="accom.r2.am5">Children's welcome kit</span></div>
+            <div class="amenity-item"><span>🏊</span> <span data-i18n="accom.r2.am6">Priority pool access</span></div>
+            <div class="amenity-item"><span>🎮</span> <span data-i18n="accom.r2.am7">Kids' entertainment system</span></div>
+            <div class="amenity-item"><span>🚗</span> <span data-i18n="accom.r2.am8">Complimentary parking</span></div>
+            <div class="amenity-item"><span>📶</span> <span data-i18n="accom.am.wifi">Fibre WiFi</span></div>
+            <div class="amenity-item"><span>🛎</span> <span data-i18n="accom.r2.am9">Family concierge</span></div>
+          </div>
+          <div class="price-block">
+            <div class="from" data-i18n="label.starting_from">Starting from</div>
+            <div class="price">XAF 140,000 <span class="per" data-i18n="label.per_night">/ night</span></div>
+          </div>
+          <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.reserve_suite">Reserve This Suite</a>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- Room 3: Junior Suite -->
+      <div class="room-detail-grid fade-up">
+        <div class="room-detail-images">
+          <div class="room-main-img">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80" alt="Junior Suite – elegant living space" loading="lazy" />
+          </div>
+          <div class="room-thumb-row">
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=75" alt="Suite lounge" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&q=75" alt="Bathroom details" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1549294413-26f195200c16?w=400&q=75" alt="Suite balcony" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="room-detail-info">
+          <span class="eyebrow" data-i18n="accom.r3.badge">Ideal for Couples</span>
+          <h2 data-i18n="accom.r3.h2">Junior Suite</h2>
+          <p class="room-tagline" data-i18n="accom.r3.tagline">Intimate luxury, elevated</p>
+          <p data-i18n="accom.r3.p1">Our Junior Suites bridge the gap between a room and a full suite — offering a dedicated living area, a generous bedroom, and a luxuriously appointed bathroom with dual vanities and a freestanding tub.</p>
+          <p data-i18n="accom.r3.p2">Perfect for couples or solo travellers who desire extra space and refinement without compromising on the intimate feel of a boutique stay.</p>
+          <div class="amenities-list">
+            <div class="amenity-item"><span>🛏</span> <span data-i18n="accom.r3.am1">King or twin bed options</span></div>
+            <div class="amenity-item"><span>🛋</span> <span data-i18n="accom.r3.am2">Separate living lounge</span></div>
+            <div class="amenity-item"><span>🛁</span> <span data-i18n="accom.r3.am3">Freestanding bathtub</span></div>
+            <div class="amenity-item"><span>🍷</span> <span data-i18n="accom.r3.am4">Welcome champagne</span></div>
+            <div class="amenity-item"><span>🌴</span> <span data-i18n="accom.r3.am5">Forest or pool view</span></div>
+            <div class="amenity-item"><span>📶</span> <span data-i18n="accom.am.wifi">Fibre WiFi</span></div>
+            <div class="amenity-item"><span>🧴</span> <span data-i18n="accom.r3.am6">L'Occitane amenities</span></div>
+            <div class="amenity-item"><span>🛎</span> <span data-i18n="accom.r3.am7">Turndown service</span></div>
+          </div>
+          <div class="price-block">
+            <div class="from" data-i18n="label.starting_from">Starting from</div>
+            <div class="price">XAF 115,000 <span class="per" data-i18n="label.per_night">/ night</span></div>
+          </div>
+          <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.reserve_suite">Reserve This Suite</a>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- Room 4: Presidential Suite -->
+      <div class="room-detail-grid reverse fade-up">
+        <div class="room-detail-images">
+          <div class="room-main-img">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80" alt="Presidential Suite – private plunge pool" loading="lazy" />
+          </div>
+          <div class="room-thumb-row">
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&q=75" alt="Master bedroom" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=400&q=75" alt="Private pool" loading="lazy" /></div>
+            <div class="room-thumb"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&q=75" alt="Dining area" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="room-detail-info">
+          <span class="eyebrow" data-i18n="rooms.r3.badge">Signature Suite</span>
+          <h2 data-i18n="rooms.r3.h3">Presidential Suite</h2>
+          <p class="room-tagline" data-i18n="accom.r4.tagline">The pinnacle of resort living</p>
+          <p data-i18n="accom.r4.p1">Reserved for those who accept nothing less than extraordinary, our Presidential Suite is a private villa experience unto itself. Commanding the resort's most elevated position, it offers 270-degree views of the Atlantic Ocean and surrounding rainforest canopy.</p>
+          <p data-i18n="accom.r4.p2">Your own plunge pool, personal butler, in-suite spa treatment room, and a private dining terrace ensure that your world revolves entirely around your comfort and desire.</p>
+          <div class="amenities-list">
+            <div class="amenity-item"><span>🏊</span> <span data-i18n="accom.r4.am1">Private plunge pool</span></div>
+            <div class="amenity-item"><span>🛎</span> <span data-i18n="accom.r4.am2">Dedicated butler</span></div>
+            <div class="amenity-item"><span>🌊</span> <span data-i18n="accom.r4.am3">Panoramic ocean views</span></div>
+            <div class="amenity-item"><span>💆</span> <span data-i18n="accom.r4.am4">In-suite treatment room</span></div>
+            <div class="amenity-item"><span>🍽</span> <span data-i18n="accom.r4.am5">Private dining terrace</span></div>
+            <div class="amenity-item"><span>🚗</span> <span data-i18n="accom.r4.am6">Airport transfer included</span></div>
+            <div class="amenity-item"><span>🍾</span> <span data-i18n="accom.r4.am7">Daily champagne service</span></div>
+            <div class="amenity-item"><span>🧹</span> <span data-i18n="accom.r4.am8">Twice-daily housekeeping</span></div>
+            <div class="amenity-item"><span>📶</span> <span data-i18n="accom.r4.am9">High-speed enterprise WiFi</span></div>
+            <div class="amenity-item"><span>🎵</span> <span data-i18n="accom.r4.am10">Bose sound system</span></div>
+          </div>
+          <div class="price-block">
+            <div class="from" data-i18n="label.starting_from">Starting from</div>
+            <div class="price">XAF 280,000 <span class="per" data-i18n="label.per_night">/ night</span></div>
+          </div>
+          <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.reserve_suite">Reserve This Suite</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="section-sm" style="background:var(--cream-dark);">
+    <div class="container">
+      <div class="text-center" style="max-width:700px; margin:0 auto;">
+        <span class="eyebrow" data-i18n="pol.eyebrow">Resort Policies</span>
+        <h2 data-i18n="pol.h2">Good to Know</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem;">
+        <div style="text-align:center; padding:2rem; background:var(--white); border-radius:var(--radius); box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+          <div style="font-size:2rem; margin-bottom:1rem;">🕒</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem; color:var(--navy);" data-i18n="pol.checkin.h4">Check-In / Check-Out</h4>
+          <p style="font-size:0.88rem;" data-i18n="pol.checkin.p">Check-in from 3:00 PM. Check-out by 12:00 PM. Early check-in and late check-out available on request.</p>
+        </div>
+        <div style="text-align:center; padding:2rem; background:var(--white); border-radius:var(--radius); box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+          <div style="font-size:2rem; margin-bottom:1rem;">🐾</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem; color:var(--navy);" data-i18n="pol.pets.h4">Pets &amp; Children</h4>
+          <p style="font-size:0.88rem;" data-i18n="pol.pets.p">Children of all ages welcome. Well-behaved pets permitted in Garden Suites. Please inform us in advance.</p>
+        </div>
+        <div style="text-align:center; padding:2rem; background:var(--white); border-radius:var(--radius); box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+          <div style="font-size:2rem; margin-bottom:1rem;">❌</div>
+          <h4 style="font-family:var(--font-serif); margin-bottom:0.5rem; color:var(--navy);" data-i18n="pol.cancel.h4">Cancellation</h4>
+          <p style="font-size:0.88rem;" data-i18n="pol.cancel.p">Free cancellation up to 48 hours before arrival. Late cancellations are subject to one night's charge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);" data-i18n="accom.cta.ey">Ready to Stay?</span>
+      <h2 data-i18n="accom.cta.h2">Begin Your LeMar Journey</h2>
+      <p data-i18n="accom.cta.p">Contact our reservations team to find the perfect room for your stay, or book directly below.</p>
+      <a href="contact.html#booking" class="btn btn-primary" style="font-size:0.8rem;" data-i18n="btn.make_reservation">Make a Reservation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-main">LeMar</span>
+            <div class="logo-divider"></div>
+            <span class="logo-sub">Milo &amp; Aby Resort</span>
+          </a>
+          <p data-i18n="footer.tagline.short">A luxury resort on the Atlantic coast of Kribi, Cameroon.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul>
+            <li><a href="accommodations.html" data-i18n="nav.stay">Rooms &amp; Suites</a></li>
+            <li><a href="restaurant.html" data-i18n="nav.dine">Restaurant</a></li>
+            <li><a href="spa.html" data-i18n="nav.spa">Spa</a></li>
+            <li><a href="pool.html" data-i18n="nav.pool">Pool</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.info">Information</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.local_exp">Local Experiences</a></li>
+            <li><a href="#" data-i18n="footer.events">Events &amp; Weddings</a></li>
+            <li><a href="#" data-i18n="footer.press">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul>
+            <li><a href="tel:+237600000000">+237 600 000 000</a></li>
+            <li><a href="mailto:reservations@lemarresort.com">reservations@lemarresort.com</a></li>
+            <li><a href="#">Kribi, Cameroon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">&copy; 2025 LeMar – Milo &amp; Aby Resort. All rights reserved.</span>
+        <span><a href="https://www.lemarresort.com">lemarresort.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

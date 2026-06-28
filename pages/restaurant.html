@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Le Marée Restaurant at LeMar Resort – fine dining in Kribi, Cameroon. Fresh seafood, Cameroonian cuisine, and coastal views." />
+  <title>Le Marée Restaurant | LeMar – Milo &amp; Aby Resort | Kribi, Cameroon</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1f2d'/><text y='22' x='4' font-size='18' fill='%23c9a84c' font-family='serif'>L</text></svg>" />
+  <style>
+    .restaurant-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 640px; }
+    .rest-hero-image { overflow: hidden; }
+    .rest-hero-content {
+      background: var(--navy);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .menu-section { background: var(--cream); }
+    .menu-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--cream-dark); margin-bottom: 3rem; }
+    .menu-tab {
+      padding: 1rem 2rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.3s;
+    }
+    .menu-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .menu-tab:hover { color: var(--navy); }
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+    .menu-category { margin-bottom: 3rem; }
+    .menu-category-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .menu-full-item {
+      display: flex;
+      gap: 2rem;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .menu-full-item:last-child { border-bottom: none; }
+    .menu-full-info { flex: 1; }
+    .menu-full-name { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .menu-full-desc { font-size: 0.88rem; color: var(--text-light); font-style: italic; }
+    .menu-full-price { font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold); flex-shrink: 0; }
+    .restaurant-info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    .info-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .info-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .info-card h4 { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--navy); }
+    .info-card p { font-size: 0.88rem; }
+    .chef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .chef-img { height: 500px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    @media (max-width: 900px) {
+      .restaurant-hero-grid { grid-template-columns: 1fr; }
+      .rest-hero-image { height: 400px; }
+      .rest-hero-content { padding: 3rem 2rem; }
+      .restaurant-info-grid { grid-template-columns: 1fr; }
+      .chef-grid { grid-template-columns: 1fr; }
+      .menu-tabs { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">LeMar</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub" data-i18n="logo.sub">Milo &amp; Aby Resort</span>
+      </a>
+      <nav id="mainNav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="accommodations.html" data-i18n="nav.stay">Stay</a>
+        <a href="restaurant.html" class="active" data-i18n="nav.dine">Dine</a>
+        <a href="spa.html" data-i18n="nav.spa">Spa</a>
+        <a href="pool.html" data-i18n="nav.pool">Pool</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html#booking" class="nav-book" data-i18n="nav.reserve">Reserve</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <img src="../dining.jpg" alt="Le Marée Restaurant – fine dining at LeMar Resort" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85'" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="eyebrow" data-i18n="dining.eyebrow">Fine Dining</span>
+      <h1 data-i18n="dining.h2">Le Marée Restaurant</h1>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="nav.dine">Restaurant</span>
+    </div>
+  </div>
+
+  <!-- RESTAURANT INTRO -->
+  <section style="background:var(--navy); padding:0;">
+    <div class="restaurant-hero-grid">
+      <div class="rest-hero-image">
+        <img src="../dining.jpg" alt="Dining experience at Le Marée Restaurant" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80'" />
+      </div>
+      <div class="rest-hero-content">
+        <span class="eyebrow" data-i18n="rest.phil.ey">Our Philosophy</span>
+        <h2 style="color:var(--white); margin-bottom:1.2rem;" data-i18n="rest.phil.h2">Cuisine That Tells a Story</h2>
+        <p style="color:rgba(255,255,255,0.75); margin-bottom:1.5rem;" data-i18n="rest.phil.p1">Le Marée is not simply a restaurant — it is a culinary narrative of Cameroon's extraordinary biodiversity. Each dish honours the land, sea, and people of this remarkable country.</p>
+        <p style="color:rgba(255,255,255,0.75); margin-bottom:1.5rem;" data-i18n="rest.phil.p2">Our Executive Chef draws inspiration from the daily catch of Kribi fishermen, organic produce from local farms, and age-old Cameroonian recipes passed down through generations — then elevates them with modern technique and artful plating.</p>
+        <p style="color:rgba(255,255,255,0.75); margin-bottom:2rem;" data-i18n="rest.phil.p3">Dine on our oceanfront terrace as the sun sinks below the horizon, or reserve our private chef's table for an immersive seven-course tasting experience.</p>
+        <a href="contact.html" class="btn btn-gold-outline" data-i18n="btn.reserve_table">Reserve a Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section section">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="rest.menu.ey">Our Menu</span>
+        <h2 data-i18n="rest.menu.h2">Flavours of Cameroon &amp; Beyond</h2>
+      </div>
+
+      <div class="menu-tabs">
+        <div class="menu-tab active" data-tab="starters" data-i18n="menu.tab.starters">Starters</div>
+        <div class="menu-tab" data-tab="mains" data-i18n="menu.tab.mains">Main Courses</div>
+        <div class="menu-tab" data-tab="desserts" data-i18n="menu.tab.desserts">Desserts</div>
+        <div class="menu-tab" data-tab="drinks" data-i18n="menu.tab.drinks">Drinks</div>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-panel active" id="starters">
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.cold_starters">Cold Starters</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Chilled Prawns du Cameroun</div>
+              <div class="menu-full-desc">Atlantic prawns, avocado mousse, citrus vinaigrette, herb oil</div>
+            </div>
+            <div class="menu-full-price">XAF 9,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Carpaccio de Thiof</div>
+              <div class="menu-full-desc">Thin-sliced kingfish, mango salsa, micro herbs, chilli oil</div>
+            </div>
+            <div class="menu-full-price">XAF 11,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Avocat Granité</div>
+              <div class="menu-full-desc">Local avocado, tomato granita, smoked paprika, sourdough crisp</div>
+            </div>
+            <div class="menu-full-price">XAF 7,500</div>
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.hot_starters">Hot Starters</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Beignets de Crevettes</div>
+              <div class="menu-full-desc">Crispy prawn fritters, tamarind dipping sauce, cucumber ribbons</div>
+            </div>
+            <div class="menu-full-price">XAF 8,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Soupe Forestière</div>
+              <div class="menu-full-desc">Wild mushroom velouté, forest herbs, truffle oil, croutons</div>
+            </div>
+            <div class="menu-full-price">XAF 7,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Foie de Pintade Poêlé</div>
+              <div class="menu-full-desc">Pan-seared guinea fowl liver, caramelised onion, brioche toast</div>
+            </div>
+            <div class="menu-full-price">XAF 10,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAINS -->
+      <div class="menu-panel" id="mains">
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.from_sea">From the Sea</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Grilled Barracuda du Kribi</div>
+              <div class="menu-full-desc">Caught fresh daily, lemongrass butter, plantain purée, seasonal greens</div>
+            </div>
+            <div class="menu-full-price">XAF 18,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Homard Grillé à l'Africaine</div>
+              <div class="menu-full-desc">Atlantic lobster, piri-piri glaze, herb butter, coconut rice</div>
+            </div>
+            <div class="menu-full-price">XAF 38,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Sole Meunière du Golfe</div>
+              <div class="menu-full-desc">Crispy sole, classic meunière sauce, green beans, lemon</div>
+            </div>
+            <div class="menu-full-price">XAF 21,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Crevettes Flambées</div>
+              <div class="menu-full-desc">King prawns flambéed in cognac, garlic cream, tagliatelle</div>
+            </div>
+            <div class="menu-full-price">XAF 22,500</div>
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.cam_classics">Cameroonian Classics</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Ndolé Prestige</div>
+              <div class="menu-full-desc">Bitterleaf stew, prawns, smoked fish, roasted groundnut, plantain</div>
+            </div>
+            <div class="menu-full-price">XAF 16,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Poulet DG à Notre Façon</div>
+              <div class="menu-full-desc">Free-range chicken, ripe plantain, vegetables, fragrant tomato sauce</div>
+            </div>
+            <div class="menu-full-price">XAF 17,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Eru &amp; Waterleaf Deluxe</div>
+              <div class="menu-full-desc">Traditional forest greens, crayfish, palm oil, assorted meats, fufu</div>
+            </div>
+            <div class="menu-full-price">XAF 15,000</div>
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.from_land">From the Land</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Filet de Bœuf Wagyu</div>
+              <div class="menu-full-desc">Wagyu beef tenderloin, truffle jus, dauphinoise potatoes, asparagus</div>
+            </div>
+            <div class="menu-full-price">XAF 32,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Agneau Rôti à la Berbère</div>
+              <div class="menu-full-desc">Slow-roasted lamb shoulder, berbere spice, couscous, harissa yoghurt</div>
+            </div>
+            <div class="menu-full-price">XAF 28,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-panel" id="desserts">
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.sweet">Sweet Endings</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Fondant Chocolat Camerounais</div>
+              <div class="menu-full-desc">Warm dark chocolate fondant, Cameroon cacao, vanilla ice cream</div>
+            </div>
+            <div class="menu-full-price">XAF 8,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Tarte Tropicale</div>
+              <div class="menu-full-desc">Mango, passion fruit, coconut cream tart, lime zest</div>
+            </div>
+            <div class="menu-full-price">XAF 7,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Crème Brûlée à la Citronnelle</div>
+              <div class="menu-full-desc">Silky lemongrass custard, caramelised sugar, fresh berries</div>
+            </div>
+            <div class="menu-full-price">XAF 7,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Assiette de Fromages</div>
+              <div class="menu-full-desc">Selection of African and European cheeses, honey, fruit compote, crackers</div>
+            </div>
+            <div class="menu-full-price">XAF 9,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Sorbet du Marché</div>
+              <div class="menu-full-desc">Daily fresh fruit sorbet — ask your server for today's flavour</div>
+            </div>
+            <div class="menu-full-price">XAF 5,500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-panel" id="drinks">
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.cocktails">Signature Cocktails</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Le Marée Sunset</div>
+              <div class="menu-full-desc">Aged rum, hibiscus syrup, lime, ginger beer, passion fruit</div>
+            </div>
+            <div class="menu-full-price">XAF 6,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Kribi Breeze</div>
+              <div class="menu-full-desc">Vodka, coconut water, kiwi, mint, sparkling lime</div>
+            </div>
+            <div class="menu-full-price">XAF 6,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">African Negroni</div>
+              <div class="menu-full-desc">Gin, Campari, rooibos vermouth, orange peel</div>
+            </div>
+            <div class="menu-full-price">XAF 7,000</div>
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.wines">Wines &amp; Champagnes</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Moët &amp; Chandon Brut</div>
+              <div class="menu-full-desc">France — Champagne</div>
+            </div>
+            <div class="menu-full-price">XAF 45,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Chardonnay, Ken Forrester</div>
+              <div class="menu-full-desc">South Africa — Western Cape</div>
+            </div>
+            <div class="menu-full-price">XAF 28,000</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Cabernet Sauvignon, Kanonkop</div>
+              <div class="menu-full-desc">South Africa — Stellenbosch</div>
+            </div>
+            <div class="menu-full-price">XAF 32,000</div>
+          </div>
+        </div>
+        <div class="menu-category">
+          <div class="menu-category-title" data-i18n="menu.nonalc">Non-Alcoholic</div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Fresh Fruit Juices</div>
+              <div class="menu-full-desc">Mango, passion fruit, pineapple, guava — pressed daily</div>
+            </div>
+            <div class="menu-full-price">XAF 3,500</div>
+          </div>
+          <div class="menu-full-item">
+            <div class="menu-full-info">
+              <div class="menu-full-name">Infusions Africaines</div>
+              <div class="menu-full-desc">Hibiscus, lemongrass &amp; ginger, moringa, soursop leaf</div>
+            </div>
+            <div class="menu-full-price">XAF 3,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTAURANT INFO -->
+  <section class="section" style="background:var(--cream-dark);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="rest.info.ey">Plan Your Visit</span>
+        <h2 data-i18n="rest.info.h2">Everything You Need to Know</h2>
+      </div>
+      <div class="restaurant-info-grid">
+        <div class="info-card fade-up">
+          <div class="icon">🕰️</div>
+          <h4 data-i18n="rest.hours.h4">Opening Hours</h4>
+          <p data-i18n="rest.hours.p">Breakfast: 7:00 – 10:30 AM<br>Lunch: 12:30 – 3:00 PM<br>Dinner: 7:00 – 11:00 PM<br>Pool Bar: 10:00 AM – 10:00 PM</p>
+        </div>
+        <div class="info-card fade-up">
+          <div class="icon">🌊</div>
+          <h4 data-i18n="rest.setting.h4">Setting</h4>
+          <p data-i18n="rest.setting.p">Dine on our open-air ocean terrace, in our air-conditioned indoor dining room, or experience a private chef's table. All with breathtaking Atlantic views.</p>
+        </div>
+        <div class="info-card fade-up">
+          <div class="icon">👔</div>
+          <h4 data-i18n="rest.dress.h4">Dress Code</h4>
+          <p data-i18n="rest.dress.p">Smart casual for lunch. Smart elegant for dinner. We ask guests to refrain from wearing swimwear in the main dining room after 6:00 PM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEF SECTION -->
+  <section class="section" style="background:var(--white);">
+    <div class="container chef-grid">
+      <div class="chef-img fade-up">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Executive Chef at Le Marée Restaurant" loading="lazy" />
+      </div>
+      <div class="fade-up">
+        <span class="eyebrow" data-i18n="rest.chef.ey">Our Chef</span>
+        <h2 data-i18n="rest.chef.h2">Chef Aristide Mboa</h2>
+        <p style="font-family:var(--font-serif); font-style:italic; font-size:1.15rem; color:var(--gold); margin-bottom:1.2rem;" data-i18n="rest.chef.quote">"Every ingredient has a story. I just help tell it."</p>
+        <p data-i18n="rest.chef.p1">Born in Yaoundé and trained at the Cordon Bleu in Paris, Chef Aristide brings three decades of culinary artistry back to his homeland. His menus are a deeply personal love letter to Cameroon — its forests, its coastline, its people, and its flavours.</p>
+        <p style="margin-top:1rem;" data-i18n="rest.chef.p2">Having cooked for heads of state and been featured in leading African and French food publications, Chef Aristide now channels his full passion into LeMar's kitchen, where he leads a team of talented local chefs who share his reverence for authentic ingredients and meticulous craft.</p>
+        <a href="contact.html" class="btn btn-outline-dark" style="margin-top:2rem;" data-i18n="btn.book_chefs_table">Book Chef's Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);" data-i18n="rest.cta.ey">Join Us for Dinner</span>
+      <h2 data-i18n="rest.cta.h2">Reserve Your Table at Le Marée</h2>
+      <p data-i18n="rest.cta.p">Tables are limited. We recommend advance reservations, especially for weekend dinners and special occasions.</p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="btn.make_reservation">Make a Reservation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-main">LeMar</span>
+            <div class="logo-divider"></div>
+            <span class="logo-sub">Milo &amp; Aby Resort</span>
+          </a>
+          <p data-i18n="footer.tagline.short">A luxury resort on the Atlantic coast of Kribi, Cameroon.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul>
+            <li><a href="accommodations.html" data-i18n="nav.stay">Rooms &amp; Suites</a></li>
+            <li><a href="restaurant.html" data-i18n="nav.dine">Restaurant</a></li>
+            <li><a href="spa.html" data-i18n="nav.spa">Spa</a></li>
+            <li><a href="pool.html" data-i18n="nav.pool">Pool</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.info">Information</h4>
+          <ul>
+            <li><a href="#" data-i18n="rest.priv_dining">Private Dining</a></li>
+            <li><a href="#" data-i18n="footer.events">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul>
+            <li><a href="tel:+237600000000">+237 600 000 000</a></li>
+            <li><a href="mailto:reservations@lemarresort.com">reservations@lemarresort.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">&copy; 2025 LeMar – Milo &amp; Aby Resort. All rights reserved.</span>
+        <span><a href="https://www.lemarresort.com">lemarresort.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Menu tabs
+    const tabs = document.querySelectorAll('.menu-tab');
+    const panels = document.querySelectorAll('.menu-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

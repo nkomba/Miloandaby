@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Infinity Pool at LeMar – Milo &amp; Aby Resort. Swim in our oceanfront infinity pool with panoramic views of the Atlantic in Kribi, Cameroon." />
+  <title>Infinity Pool | LeMar – Milo &amp; Aby Resort | Kribi, Cameroon</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1f2d'/><text y='22' x='4' font-size='18' fill='%23c9a84c' font-family='serif'>L</text></svg>" />
+  <style>
+    .pool-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.08); margin-top: 4rem; }
+    .pool-stat { padding: 2rem; text-align: center; background: var(--navy-light); }
+    .pool-stat-num { font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); line-height: 1; }
+    .pool-stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+    .pool-features-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0; }
+    .pool-feature-block { padding: 4rem; }
+    .pool-feature-block:nth-child(odd) { background: var(--cream); }
+    .pool-feature-block:nth-child(even) { background: var(--cream-dark); }
+    .pool-feature-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+    .pool-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 320px 220px;
+      gap: 6px;
+    }
+    .pool-gallery-item { overflow: hidden; }
+    .pool-gallery-item:first-child { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .pool-gallery-item img { height: 100%; transition: transform 0.6s ease; }
+    .pool-gallery-item:hover img { transform: scale(1.06); }
+    .bar-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .bar-menu-col h3 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy); margin-bottom: 1.5rem; border-bottom: 1px solid var(--cream-dark); padding-bottom: 0.8rem; }
+    .bar-item { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid var(--cream-dark); font-size: 0.9rem; }
+    .bar-item:last-child { border-bottom: none; }
+    .bar-item-name { color: var(--navy); }
+    .bar-item-price { color: var(--gold); font-family: var(--font-serif); }
+    @media (max-width: 900px) {
+      .pool-stats { grid-template-columns: repeat(2,1fr); }
+      .pool-features-grid { grid-template-columns: 1fr; }
+      .pool-gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .pool-gallery-item:first-child { grid-column: auto; grid-row: auto; }
+      .pool-gallery-item { height: 220px; }
+      .bar-menu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">LeMar</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub" data-i18n="logo.sub">Milo &amp; Aby Resort</span>
+      </a>
+      <nav id="mainNav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="accommodations.html" data-i18n="nav.stay">Stay</a>
+        <a href="restaurant.html" data-i18n="nav.dine">Dine</a>
+        <a href="spa.html" data-i18n="nav.spa">Spa</a>
+        <a href="pool.html" class="active" data-i18n="nav.pool">Pool</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html#booking" class="nav-book" data-i18n="nav.reserve">Reserve</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- FULL-PAGE HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="../view.jpg"
+        alt="LeMar Resort – pool and ocean view"
+        loading="eager"
+        onerror="this.src='https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920&q=85'"
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <span class="eyebrow" data-i18n="pool.eyebrow">The Pool Experience</span>
+      <h1 data-i18n="pool.page.h1">Where Earth<br>Meets the Sea</h1>
+      <p data-i18n="pool.page.p">Our infinity pool appears to spill into the horizon of the Atlantic — a breathtaking illusion that makes every swim an unforgettable experience.</p>
+      <div class="hero-buttons">
+        <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.book_stay">Book a Stay</a>
+        <a href="#pool-info" class="btn btn-outline" data-i18n="btn.explore">Explore</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="nav.pool">Pool</span>
+    </div>
+  </div>
+
+  <!-- POOL STATS -->
+  <section style="background:var(--navy);" id="pool-info">
+    <div class="container">
+      <div class="text-center" style="padding-top:4rem;">
+        <span class="eyebrow" data-i18n="pool.stats.ey">The Numbers</span>
+        <h2 style="color:var(--white);" data-i18n="pool.stats.h2">A Pool Unlike Any Other</h2>
+        <p style="color:rgba(255,255,255,0.7); max-width:600px; margin:1rem auto 0;" data-i18n="pool.stats.p">Designed by award-winning landscape architects and aligned to capture the last light of every sunset.</p>
+      </div>
+      <div class="pool-stats">
+        <div class="pool-stat">
+          <div class="pool-stat-num">42m</div>
+          <div class="pool-stat-label" data-i18n="pool.stat.length">Pool Length</div>
+        </div>
+        <div class="pool-stat">
+          <div class="pool-stat-num">32°C</div>
+          <div class="pool-stat-label" data-i18n="pool.stat.temp">Water Temperature</div>
+        </div>
+        <div class="pool-stat">
+          <div class="pool-stat-num">2</div>
+          <div class="pool-stat-label" data-i18n="pool.stat.decks">Pool Decks</div>
+        </div>
+        <div class="pool-stat">
+          <div class="pool-stat-num">24h</div>
+          <div class="pool-stat-label" data-i18n="pool.stat.svc">Poolside Service</div>
+        </div>
+      </div>
+    </div>
+    <div style="padding-bottom:4rem;"></div>
+  </section>
+
+  <!-- POOL GALLERY -->
+  <section class="section-sm" style="background:var(--white);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:2rem;">
+        <span class="eyebrow" data-i18n="gallery.eyebrow">Gallery</span>
+        <h2 data-i18n="pool.gallery.h2">The Pool in All Its Glory</h2>
+      </div>
+      <div class="pool-gallery-grid">
+        <div class="pool-gallery-item">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1000&q=80" alt="LeMar infinity pool main view" loading="lazy" />
+        </div>
+        <div class="pool-gallery-item">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Pool lounge chairs at sunset" loading="lazy" />
+        </div>
+        <div class="pool-gallery-item">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Aerial view of resort pool" loading="lazy" />
+        </div>
+        <div class="pool-gallery-item">
+          <img src="https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?w=600&q=80" alt="Children's pool" loading="lazy" />
+        </div>
+        <div class="pool-gallery-item">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Poolside beach view" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POOL FEATURES -->
+  <section style="padding:0;">
+    <div class="pool-features-grid">
+      <div class="pool-feature-block fade-up">
+        <div class="pool-feature-icon">🏊</div>
+        <span class="eyebrow" data-i18n="pool.feat1.ey">Main Pool</span>
+        <h3 data-i18n="pool.feat1.h3">The Infinity Edge</h3>
+        <p data-i18n="pool.feat1.p1">42 metres of azure water that appears to merge with the Atlantic horizon. Heated to a perfect 32°C year-round, our main pool is suitable for adults and confident swimmers alike.</p>
+        <p style="margin-top:1rem;" data-i18n="pool.feat1.p2">The pool deck features 30 sun loungers with parasols, and our poolside attendants ensure you want for nothing — from chilled towels to your favourite cocktail.</p>
+      </div>
+      <div class="pool-feature-block fade-up">
+        <div class="pool-feature-icon">🧒</div>
+        <span class="eyebrow" data-i18n="pool.feat2.ey">Family Zone</span>
+        <h3 data-i18n="pool.feat2.h3">The Little Lagoon</h3>
+        <p data-i18n="pool.feat2.p1">Designed exclusively for our youngest guests, the Little Lagoon is a shallow, safe, and beautifully themed pool area featuring gentle water features, a splash pad, and soft poolside seating for parents.</p>
+        <p style="margin-top:1rem;" data-i18n="pool.feat2.p2">Our trained lifeguards and children's activity coordinators are on duty daily to ensure safety and fun in equal measure.</p>
+      </div>
+      <div class="pool-feature-block fade-up">
+        <div class="pool-feature-icon">🌅</div>
+        <span class="eyebrow" data-i18n="pool.feat3.ey">Sunset Ritual</span>
+        <h3 data-i18n="pool.feat3.h3">The Evening Swim</h3>
+        <p data-i18n="pool.feat3.p1">As the sun touches the horizon of the Gulf of Guinea, our pool takes on a magical golden hue. Join our complimentary guided evening swim at 6:30 PM, followed by cocktails on the upper deck.</p>
+        <p style="margin-top:1rem;" data-i18n="pool.feat3.p2">This daily ritual has become one of the most beloved experiences at LeMar — a moment of collective beauty that guests return for again and again.</p>
+      </div>
+      <div class="pool-feature-block fade-up">
+        <div class="pool-feature-icon">🍹</div>
+        <span class="eyebrow" data-i18n="pool.feat4.ey">Poolside Bar</span>
+        <h3 data-i18n="pool.feat4.h3">Aqua Bar</h3>
+        <p data-i18n="pool.feat4.p1">Our swim-up bar serves a curated menu of tropical cocktails, fresh juices, light bites, and afternoon snacks. From iced hibiscus punch to classic mojitos and local Cameroon beers — refreshment is always within arm's reach.</p>
+        <p style="margin-top:1rem;" data-i18n="pool.feat4.p2">Open daily from 10:00 AM to 10:00 PM. Mobile ordering available through our resort app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POOLSIDE BAR MENU -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:3rem;">
+        <span class="eyebrow" data-i18n="pool.feat4.h3">Aqua Bar</span>
+        <h2 data-i18n="pool.bar.h2">Poolside Delights</h2>
+      </div>
+      <div class="bar-menu-grid">
+        <div class="bar-menu-col">
+          <h3 data-i18n="pool.bar.drinks">🍹 Cocktails &amp; Drinks</h3>
+          <div class="bar-item"><span class="bar-item-name">Kribi Sunset Punch</span><span class="bar-item-price">XAF 5,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Classic Mojito</span><span class="bar-item-price">XAF 5,000</span></div>
+          <div class="bar-item"><span class="bar-item-name">Tropical Piña Colada</span><span class="bar-item-price">XAF 5,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Hibiscus Iced Tea</span><span class="bar-item-price">XAF 3,000</span></div>
+          <div class="bar-item"><span class="bar-item-name">33 Export (Local Beer)</span><span class="bar-item-price">XAF 2,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Fresh Coconut Water</span><span class="bar-item-price">XAF 2,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Sparkling Mineral Water</span><span class="bar-item-price">XAF 2,000</span></div>
+        </div>
+        <div class="bar-menu-col">
+          <h3 data-i18n="pool.bar.bites">🥗 Light Bites</h3>
+          <div class="bar-item"><span class="bar-item-name">Club Sandwich</span><span class="bar-item-price">XAF 9,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Grilled Prawn Skewers</span><span class="bar-item-price">XAF 12,000</span></div>
+          <div class="bar-item"><span class="bar-item-name">Tropical Fruit Platter</span><span class="bar-item-price">XAF 6,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Plantain Chips &amp; Guacamole</span><span class="bar-item-price">XAF 5,000</span></div>
+          <div class="bar-item"><span class="bar-item-name">Gourmet Burger</span><span class="bar-item-price">XAF 13,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Ice Cream (3 scoops)</span><span class="bar-item-price">XAF 4,500</span></div>
+          <div class="bar-item"><span class="bar-item-name">Açaí Bowl</span><span class="bar-item-price">XAF 7,000</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POOL RULES & HOURS -->
+  <section class="section-sm" style="background:var(--navy);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+        <div class="fade-up">
+          <span class="eyebrow" data-i18n="pool.hours.ey">Plan Your Visit</span>
+          <h2 style="color:var(--white); margin-bottom:1.5rem;" data-i18n="pool.hours.h2">Pool Hours &amp; Guidelines</h2>
+          <ul style="color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:2.2;">
+            <li>🕗 Main Pool: 7:00 AM – 10:00 PM daily</li>
+            <li>🧒 Little Lagoon: 8:00 AM – 8:00 PM</li>
+            <li>🍹 Aqua Bar: 10:00 AM – 10:00 PM</li>
+            <li>🏊 Lifeguards on duty: 8:00 AM – 7:00 PM</li>
+            <li>🧘 Morning lap swim: 6:30 – 7:30 AM</li>
+            <li>🌅 Sunset swim ritual: Daily at 6:30 PM</li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <span class="eyebrow" data-i18n="pool.rules.ey">Pool Guidelines</span>
+          <h2 style="color:var(--white); margin-bottom:1.5rem;" data-i18n="pool.rules.h2">For Your Safety &amp; Comfort</h2>
+          <ul style="color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:2.2;">
+            <li>✅ Swimwear required in all pool areas</li>
+            <li>✅ Shower before entering the pool</li>
+            <li>✅ Children under 12 must be supervised</li>
+            <li>✅ Glassware not permitted at pool edge</li>
+            <li>✅ Loungers reserved for hotel guests</li>
+            <li>✅ Towels available at the pool station</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light);" data-i18n="pool.cta.ey">Ready to Dive In?</span>
+      <h2 data-i18n="pool.cta.h2">Book Your Stay at LeMar</h2>
+      <p data-i18n="pool.cta.p">Pool access is complimentary for all resort guests. Reserve your room today and make the Atlantic your backyard.</p>
+      <a href="contact.html#booking" class="btn btn-primary" data-i18n="btn.check_avail">Check Availability</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-main">LeMar</span>
+            <div class="logo-divider"></div>
+            <span class="logo-sub">Milo &amp; Aby Resort</span>
+          </a>
+          <p data-i18n="footer.tagline.short">A luxury resort on the Atlantic coast of Kribi, Cameroon.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">📷</a>
+            <a href="#" class="social-link">f</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4 data-i18n="footer.explore">Explore</h4><ul>
+          <li><a href="accommodations.html" data-i18n="nav.stay">Rooms &amp; Suites</a></li>
+          <li><a href="restaurant.html" data-i18n="nav.dine">Restaurant</a></li>
+          <li><a href="spa.html" data-i18n="nav.spa">Spa</a></li>
+          <li><a href="pool.html" data-i18n="nav.pool">Pool</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="nav.pool">Pool</h4><ul>
+          <li><a href="#" data-i18n="pool.foot.bar">Aqua Bar Menu</a></li>
+          <li><a href="#" data-i18n="pool.foot.hire">Private Pool Hire</a></li>
+          <li><a href="#" data-i18n="pool.foot.lessons">Swimming Lessons</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><ul>
+          <li><a href="tel:+237600000000">+237 600 000 000</a></li>
+          <li><a href="mailto:reservations@lemarresort.com">reservations@lemarresort.com</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">&copy; 2025 LeMar – Milo &amp; Aby Resort. All rights reserved.</span>
+        <span><a href="https://www.lemarresort.com">lemarresort.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
